@@ -11,7 +11,7 @@
                 <input type="text" id="candyName" placeholder="Name">
                 <input type="text" id="candyDescription" placeholder="Description">
                 <input type="text" id="candyPrice" placeholder="Price($)">
-                <input type="text" id="candyImage" placeholder="Image URL">
+                <input type="URL" id="candyImage" placeholder="Image URL">
             </form>
             <v-divider></v-divider>
             <v-card-actions>
@@ -37,17 +37,17 @@
         methods: {
             createCandy() {
                 axios.request({
-                url: "http://127.0.0.1:5000/candy",
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                data: {
-                    name: document.getElementById("candyName").value,
-                    description: document.getElementById("candyDescription").value,
-                    priceInDollars: parseFloat(document.getElementById("candyPrice").value),
-                    imageUrl: document.getElementById("candyImage").value
-                }
+                    url: "http://127.0.0.1:5000/candy",
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    data: {
+                        name: document.getElementById("candyName").value,
+                        description: document.getElementById("candyDescription").value,
+                        priceInDollars: parseFloat(document.getElementById("candyPrice").value),
+                        imageUrl: document.getElementById("candyImage").value
+                    }
                 }).then((res) => {
                     console.log(res);
                     document.getElementById("candyForm").reset();

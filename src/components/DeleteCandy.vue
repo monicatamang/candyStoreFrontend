@@ -15,14 +15,14 @@
         methods: {
             deleteCandy(candyId) {
                 axios.request({
-                url: "http://127.0.0.1:5000/candy",
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                data: {
-                    id: candyId
-                }
+                    url: "http://127.0.0.1:5000/candy",
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    data: {
+                        id: candyId
+                    }
                 }).then((res) => {
                     console.log(res);
                 }).catch((err) => {

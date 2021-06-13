@@ -34,8 +34,8 @@
         methods: {
             getCandy() {
                 axios.request({
-                url: "http://127.0.0.1:5000/candy",
-                method: "GET"
+                    url: "http://127.0.0.1:5000/candy",
+                    method: "GET"
                 }).then((res) => {
                     console.log(res);
                     this.candies = res.data;
