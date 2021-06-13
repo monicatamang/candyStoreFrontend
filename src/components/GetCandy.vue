@@ -1,19 +1,19 @@
 <template>
     <article>
-        <v-card v-for="candy in candies" :key="candy[4]" class="candyCard">
+        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard">
             <img :src="candy[3]" :alt="candy[1]">
             <h3>{{ candy[0] }} | ${{ parseFloat(candy[2]) }}</h3>
             <p>{{ candy[1] }}</p>
-            <v-card-actions>
-                <edit-candy :candyId="candy[4]"></edit-candy>
-                <delete-candy :candyId="candy[4]"></delete-candy>
+            <v-card-actions v-if="userId === candy[4]">
+                <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
+                <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
             </v-card-actions>
         </v-card>
     </article>
 </template>
 
 <script>
-    import axios from "axios";
+    import cookies from "vue-cookies";
     import EditCandy from "../components/EditCandy.vue";
     import DeleteCandy from "../components/DeleteCandy.vue";
 
@@ -27,27 +27,19 @@
 
         data() {
             return {
-                candies: [],
+                userId: cookies.get("userData").id
             }
         },
 
-        methods: {
-            getCandy() {
-                axios.request({
-                    url: "http://127.0.0.1:5000/candy",
-                    method: "GET"
-                }).then((res) => {
-                    console.log(res);
-                    this.candies = res.data;
-                }).catch((err) => {
-                    console.log(err);
-                });
-            },
+        computed: {
+            candies() {
+                return this.$store.state.allCandies; 
+            }
         },
 
         mounted() {
-            this.getCandy();
-        },
+            this.$store.dispatch("getCandy");
+        }
     }
 </script>
 

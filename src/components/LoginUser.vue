@@ -9,15 +9,10 @@
 
 <script>
     import axios from "axios";
+    import cookies from "vue-cookies";
 
     export default {
         name: "login-user",
-
-        data() {
-            return {
-                loginStatus: ""
-            }
-        },
 
         methods: {
             attemptLoginUser() {
@@ -33,7 +28,8 @@
                     }
                 }).then((res) => {
                     console.log(res);
-                    this.user = res.data;
+                    let userDataJSON = JSON.stringify(res.data);
+                    cookies.set("userData", userDataJSON);
                     this.$router.push("/Store");
                 }).catch((err) => {
                     console.log(err);

@@ -1,19 +1,27 @@
 <template>
-    <v-btn small @click="deleteCandy(candyId)">Delete</v-btn>
+    <v-btn small @click="deleteCandy()">Delete</v-btn>
 </template>
 
 <script>
     import axios from "axios";
+    import cookies from "vue-cookies";
 
     export default {
         name: "delete-candy",
 
+        data() {
+            return {
+                id: cookies.get("userData").id
+            }
+        },
+
         props: {
-            candyId: Number
+            candyIdValue: Number,
+            userIdValue: Number
         },
 
         methods: {
-            deleteCandy(candyId) {
+            deleteCandy() {
                 axios.request({
                     url: "http://127.0.0.1:5000/candy",
                     method: "DELETE",
@@ -21,7 +29,8 @@
                         "Content-Type": "application/json"
                     },
                     data: {
-                        id: candyId
+                        candyId: this.candyIdValue,
+                        userId: this.id
                     }
                 }).then((res) => {
                     console.log(res);

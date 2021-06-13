@@ -16,7 +16,7 @@
             <v-divider></v-divider>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn @click="dialog = false; editCandy(candyId)">Submit</v-btn>
+                <v-btn @click="dialog = false; editCandy()">Submit</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -24,12 +24,14 @@
 
 <script>
     import axios from "axios";
+    import cookies from "vue-cookies";
 
     export default {
         name: "edit-candy",
 
         props: {
-            candyId: Number
+            candyIdValue: Number,
+            userIdValue: Number
         },
 
         data() {
@@ -39,7 +41,7 @@
         },
 
         methods: {
-            editCandy(candyId) {
+            editCandy() {
                 axios.request({
                     url: "http://127.0.0.1:5000/candy",
                     method: "PATCH",
@@ -47,7 +49,8 @@
                         "Content-Type": "application/json"
                     },
                     data: {
-                        id: candyId,
+                        userId: cookies.get("userData").id,
+                        candyId: this.candyIdValue,
                         name: document.getElementById("editCandyName").value,
                         description: document.getElementById("editCandyDescription").value,
                         priceInDollars: parseFloat(document.getElementById("editCandyPrice").value),

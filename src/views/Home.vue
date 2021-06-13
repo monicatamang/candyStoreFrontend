@@ -5,7 +5,7 @@
             <v-tab>Signup</v-tab>
             <v-tab>Login</v-tab>
             <v-tab-item>
-                <signup-user></signup-user>
+                <signup-users></signup-users>
             </v-tab-item>
             <v-tab-item>
                 <login-user></login-user>
@@ -16,7 +16,7 @@
 
 <script>
     import NavBar from "../components/NavBar.vue";
-    import SignupUser from "../components/SignupUser.vue";
+    import SignupUsers from "../components/SignupUsers.vue";
     import LoginUser from "../components/LoginUser.vue";
 
     export default {
@@ -24,7 +24,7 @@
 
         components: {
             NavBar,
-            SignupUser,
+            SignupUsers,
             LoginUser
         },
     }

@@ -6,7 +6,7 @@
         <v-card>
             <v-card-title class="text-center">Candy Store</v-card-title>
             <v-card-subtitle>Create Your Candy</v-card-subtitle>
-            <form action="javascript:void(0)">
+            <form action="javascript:void(0)" id="candyForm">
                 <h3>Enter a new candy</h3>
                 <input type="text" id="candyName" placeholder="Name">
                 <input type="text" id="candyDescription" placeholder="Description">
@@ -24,6 +24,7 @@
 
 <script>
     import axios from "axios";
+    import cookies from "vue-cookies";
 
     export default {
         name: "create-candy",
@@ -46,12 +47,13 @@
                         name: document.getElementById("candyName").value,
                         description: document.getElementById("candyDescription").value,
                         priceInDollars: parseFloat(document.getElementById("candyPrice").value),
-                        imageUrl: document.getElementById("candyImage").value
+                        imageUrl: document.getElementById("candyImage").value,
+                        userId: cookies.get("userData").id
                     }
                 }).then((res) => {
                     console.log(res);
                     document.getElementById("candyForm").reset();
-                    this.candies.push(res.data[0]);
+                    this.$store.commit("addNewCandy", res.data[0])
                 }).catch((err) => {
                     console.log(err);
                 });

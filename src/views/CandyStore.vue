@@ -20,12 +20,6 @@ export default {
     NavBar,
     CreateCandy,
     GetCandy
-  },
-
-  data() {
-    return {
-        candies: []
-    }
   }
 }
 </script>
