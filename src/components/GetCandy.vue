@@ -5,8 +5,8 @@
             <h3>{{ candy[0] }} | ${{ parseFloat(candy[2]) }}</h3>
             <p>{{ candy[1] }}</p>
             <v-card-actions>
-                <v-btn @click="editCandy(candy[4])">Edit</v-btn>
-                <v-btn @click="deleteCandy(candy[4])">Delete</v-btn>
+                <edit-candy :candyId="candy[4]"></edit-candy>
+                <delete-candy :candyId="candy[4]"></delete-candy>
             </v-card-actions>
         </v-card>
     </article>
@@ -14,13 +14,20 @@
 
 <script>
     import axios from "axios";
+    import EditCandy from "../components/EditCandy.vue";
+    import DeleteCandy from "../components/DeleteCandy.vue";
 
     export default {
         name: "get-candy",
 
+        components: {
+            EditCandy,
+            DeleteCandy
+        },
+
         data() {
             return {
-                candies: []
+                candies: [],
             }
         },
 
@@ -47,7 +54,6 @@
 <style scoped>
     img {
         width: 15vw;
-        /* width: 10vw; */
     }
 
     article {
@@ -71,16 +77,13 @@
 
     p {
         font-size: 0.8rem;
-        /* font-size: 0.6rem; */
     }
 
     h3, h4 {
         font-family: var(--titleFont);
-        /* font-size: 0.8rem; */
     }
 
     p, .v-btn {
         font-family: var(--bodyFont);
-        /* font-size: 0.6rem; */
     }
 </style>

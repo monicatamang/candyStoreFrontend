@@ -1,12 +1,16 @@
 <template>
-    <div>
-
-    </div>
+    <v-btn small @click="deleteCandy(candyId)">Delete</v-btn>
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         name: "delete-candy",
+
+        props: {
+            candyId: Number
+        },
 
         methods: {
             deleteCandy(candyId) {
