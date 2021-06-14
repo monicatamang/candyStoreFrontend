@@ -1,22 +1,20 @@
 <template>
     <v-dialog v-model="dialog" width="600">
         <template v-slot:activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on" small>Edit</v-btn>
+            <v-btn v-bind="attrs" v-on="on">Edit</v-btn>
         </template>
         <v-card>
-            <v-card-title class="text-center">Candy Store</v-card-title>
-            <v-card-subtitle>Edit Your Candy</v-card-subtitle>
+            <v-card-title class="text-center">Edit Your Candy</v-card-title>
             <form id="editCandyForm" action="javascript:void(0)">
-                <h3>Edit Candy</h3>
                 <input type="text" id="editCandyName" placeholder="Name">
-                <input type="text" id="editCandyDescription" placeholder="Description">
+                <textarea id="editCandyDescription" cols="25" rows="3" placeholder="Description"></textarea>
                 <input type="text" id="editCandyPrice" placeholder="Price($)">
                 <input type="URL" id="editCandyImage" placeholder="Image URL">
             </form>
-            <v-divider></v-divider>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn @click="dialog = false; editCandy()">Submit</v-btn>
+                <v-btn @click="dialog = false" text>Close</v-btn>
+                <v-btn text @click="dialog = false; editCandy()">Post</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -59,6 +57,7 @@
                 }).then((res) => {
                     console.log(res);
                     this.$store.dispatch("getCandy");
+                    document.getElementById("editCandyForm").reset();
                 }).catch((err) => {
                     console.log(err);
                 });
@@ -68,5 +67,30 @@
 </script>
 
 <style scoped>
-    
+    form {
+        display: grid;
+        place-items: center;
+        row-gap: 3vh;
+        margin: 1vh 0vh;
+    }
+
+    .v-card__title {
+        font-family: var(--bodyFont);
+    }
+
+    input, textarea {
+        background: white;
+        padding: 3%;
+        border-bottom: 1.5px solid var(--accentColor);
+        font-family: var(--bodyFont);
+        font-size: 0.9rem;
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+    }
+
+    .v-btn {
+        font-family: var(--bodyFont);
+    }
 </style>

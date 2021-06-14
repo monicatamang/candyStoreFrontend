@@ -1,7 +1,5 @@
 <template>
     <section>
-        <nav-bar></nav-bar>
-        <v-divider></v-divider>
         <main>
             <img src="../assets/logo.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped.">
             <h1>Welcome to the Candy Store</h1>
@@ -22,7 +20,6 @@
 </template>
 
 <script>
-    import NavBar from "../components/NavBar.vue";
     import SignupUsers from "../components/SignupUsers.vue";
     import LoginUser from "../components/LoginUser.vue";
     import CopyrightStatement from "../components/CopyrightStatement.vue";
@@ -37,7 +34,6 @@
         },
 
         components: {
-            NavBar,
             SignupUsers,
             LoginUser,
             CopyrightStatement
@@ -52,7 +48,7 @@
         row-gap: 20px;
         text-align: center;
         padding: 0% 5%;
-        margin-bottom: 3vh;
+        margin: 3vh 0vh;
     }
 
     img {

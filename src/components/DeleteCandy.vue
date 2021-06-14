@@ -1,5 +1,5 @@
 <template>
-    <v-btn small @click="deleteCandy">Delete</v-btn>
+    <v-btn @click="deleteCandy">Delete</v-btn>
 </template>
 
 <script>

@@ -1,10 +1,10 @@
 <template>
     <article>
         <v-card v-for="candy in candies" :key="candy[5]" class="candyCard">
-            <v-btn fab elevation="1" class="mt-4">${{ candy[2] }}</v-btn>
             <img :src="candy[3]" :alt="candy[1]">
-            <h3>{{ candy[0] }}</h3>
+            <h1>{{ candy[0] }}</h1>
             <p>{{ candy[1] }}</p>
+            <h3>${{ candy[2] }}</h3>
             <v-card-actions v-if="userId === candy[4]">
                 <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
                 <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
@@ -46,7 +46,7 @@
 
 <style scoped>
     img {
-        width: 15vw;
+        width: 60%;
     }
 
     article {
@@ -62,10 +62,18 @@
     .v-card {
         display: grid;
         place-items: center;
-        row-gap: 10px;
+        row-gap: 20px;
         width: 100%;
         height: 100%;
-        padding: 0% 10%;
+        padding: 0% 10% 5% 10%;
+        text-align: center;
+    }
+
+    .v-card__actions {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
     }
 
     .v-btn {
@@ -73,14 +81,22 @@
     }
 
     p {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
-    h3, h4 {
+    h1, h3 {
         font-family: var(--titleFont);
+    }
+
+    h1 {
+        font-size: 1.8rem;
     }
 
     p, .v-btn {
         font-family: var(--bodyFont);
+    }
+
+    h3 {
+        font-size: 1.5rem;
     }
 </style>

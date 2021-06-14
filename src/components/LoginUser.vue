@@ -2,7 +2,7 @@
     <form action="javascript:void(0)">
         <input type="text" id="loginUsername" placeholder="Username">
         <input type="password" id="loginPassword" placeholder="Password">
-        <v-btn @click="attemptLoginUser" elevation="1" large :color="buttonColor">Login</v-btn>
+        <v-btn @click="attemptLoginUser" elevation="1" large dark :color="buttonColor">Login</v-btn>
     </form>
 </template>
 
@@ -15,7 +15,7 @@
 
         data() {
             return {
-                buttonColor: "#FAF1E6"
+                buttonColor: "#FABA8B"
             }
         },
 
@@ -60,8 +60,8 @@
     input {
         background: white;
         padding: 3%;
-        border-radius: 20px;
-        border: 1.5px solid var(--accentColor);
+        border-radius: 10px;
+        border: 3px solid var(--mainDarkColor);
         font-family: var(--bodyFont);
         font-size: 0.9rem;
     }
