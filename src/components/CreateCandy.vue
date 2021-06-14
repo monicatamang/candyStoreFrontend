@@ -58,6 +58,8 @@
                 }).catch((err) => {
                     console.log(err);
                 });
+
+                document.getElementById("createCandyForm").reset();
             },
         }
     }

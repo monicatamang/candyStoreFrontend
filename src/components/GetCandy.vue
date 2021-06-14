@@ -36,11 +36,7 @@
             candies() {
                 return this.$store.state.allCandies; 
             }
-        },
-
-        // mounted() {
-        //     this.$store.dispatch("getCandy");
-        // }
+        }
     }
 </script>
 
