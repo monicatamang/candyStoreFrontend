@@ -53,7 +53,7 @@
                 }).then((res) => {
                     console.log(res);
                     document.getElementById("candyForm").reset();
-                    this.$store.commit("addNewCandy", res.data[0])
+                    this.$store.commit("addNewCandy", res.data)
                 }).catch((err) => {
                     console.log(err);
                 });

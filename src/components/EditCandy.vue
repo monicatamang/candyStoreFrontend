@@ -58,6 +58,7 @@
                     }
                 }).then((res) => {
                     console.log(res);
+                    this.$store.dispatch("getCandy");
                 }).catch((err) => {
                     console.log(err);
                 });

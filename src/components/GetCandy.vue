@@ -1,6 +1,6 @@
 <template>
     <article>
-        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard">
+        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard" :id="`candyPost${candy[5]}`">
             <img :src="candy[3]" :alt="candy[1]">
             <h3>{{ candy[0] }} | ${{ parseFloat(candy[2]) }}</h3>
             <p>{{ candy[1] }}</p>

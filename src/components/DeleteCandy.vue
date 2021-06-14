@@ -1,5 +1,5 @@
 <template>
-    <v-btn small @click="deleteCandy()">Delete</v-btn>
+    <v-btn small @click="deleteCandy">Delete</v-btn>
 </template>
 
 <script>
@@ -34,12 +34,12 @@
                     }
                 }).then((res) => {
                     console.log(res);
+                    this.$store.commit("removeCandy", this.candyIdValue);
                 }).catch((err) => {
                     console.log(err);
                 });
             }
-        }
-
+        },
     }
 </script>
 

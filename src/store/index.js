@@ -10,11 +10,16 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    addNewCandy: function(state, data) {
-      state.allCandies = data;
+    addNewCandy(state, data) {
+      state.allCandies.push(data);
     },
 
-    updateAllCandies: function(state, data) {
+    removeCandy(state, data) {
+      let index = state.allCandies.indexOf(data);
+      state.allCandies.splice(index);
+    },
+
+    updateAllCandies(state, data) {
       state.allCandies = data
     }
   },

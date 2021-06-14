@@ -21,5 +21,9 @@ export default {
   :root {
     --titleFont: "Lora", serif;
     --bodyFont: "Poppins", sans-serif;
+    --mainDarkColor: "#F9EAC2";
+    --mainLightColor: "#F9EAC2";
+    --accentColorOne: "#ECFDF1";
+    --accentColorTwo: "#FEE7E6";
   }
 </style>

@@ -17,7 +17,7 @@
         methods: {
             signupUser() {
                 axios.request({
-                    url: "http://127.0.0.1:5000/signup",
+                    url: "http://127.0.0.1:5000/users",
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
