@@ -1,7 +1,7 @@
 <template>
     <section>
         <main>
-            <img src="../assets/logoOrangeBackground.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped.">
+            <img src="../assets/logoLightOrangeBackground.jpg" alt="A clipart of two hard candies with first candy slightly angled towards the bottom left and the second candy slightly angled towards the bottom right. The first candy overlaps with the second candy and both candies each have a light orange-coloured outline and a striped-patterned wrapper with two light orange vertical stripes.">
             <h1>Welcome to the Candy Store</h1>
             <p>View and upload your favourite candies! Join today or login into your account.</p>
         </main>

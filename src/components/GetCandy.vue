@@ -12,7 +12,7 @@
                 </v-card-actions>
             </v-card>
             <v-card v-if="candy[3] === ''">
-                <img src="../assets/logoWhiteBackground.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped">
+                <img src="../assets/logoWhiteBackground.jpg" alt="A clipart of two hard candies with first candy slightly angled towards the bottom left and the second candy slightly angled towards the bottom right. The first candy overlaps with the second candy and both candies each have a light orange-coloured outline and a striped-patterned wrapper with two light orange vertical stripes.">
                 <h1>{{ candy[0] }}</h1>
                 <p>{{ candy[1] }}</p>
                 <h3>${{ candy[2] }}</h3>
@@ -53,30 +53,33 @@
 </script>
 
 <style scoped>
+    article, .v-card {
+        display: grid;
+        place-items: center;
+        row-gap: 20px;
+    }
+
     img {
         width: 60%;
     }
 
     article {
-        display: grid;
-        place-items: center;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        row-gap: 20px;
         column-gap: 20px;
         margin: 5vh 0vh;
         width: 90vw;
     }
 
-    .candyCardContainer {
+    .candyCardContainer, .v-card {
         width: 100%;
         height: 100%;
+    }
+
+    .candyCardContainer {
         text-align: center;
     }
 
     .v-card {
-        display: grid;
-        place-items: center;
-        row-gap: 20px;
         padding: 5% 10%;
     }
 
@@ -86,10 +89,6 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
     }
-
-    /* h1, h3, p {
-        padding: 0;
-    } */
 
     h1, h3 {
         font-family: var(--titleFont);
