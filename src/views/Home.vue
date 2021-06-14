@@ -1,7 +1,7 @@
 <template>
     <section>
         <main>
-            <img src="../assets/logo.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped.">
+            <img src="../assets/logoOrangeBackground.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped.">
             <h1>Welcome to the Candy Store</h1>
             <p>View and upload your favourite candies! Join today or login into your account.</p>
         </main>

@@ -1,15 +1,27 @@
 <template>
     <article>
-        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard">
-            <img :src="candy[3]" :alt="candy[1]">
-            <h1>{{ candy[0] }}</h1>
-            <p>{{ candy[1] }}</p>
-            <h3>${{ candy[2] }}</h3>
-            <v-card-actions v-if="userId === candy[4]">
-                <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
-                <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
-            </v-card-actions>
-        </v-card>
+        <div v-for="candy in candies" :key="candy[5]" class="candyCardContainer">
+            <v-card v-if="candy[3] != ''">
+                <img :src="candy[3]" :alt="candy[1]">
+                <h1>{{ candy[0] }}</h1>
+                <p>{{ candy[1] }}</p>
+                <h3>${{ candy[2] }}</h3>
+                <v-card-actions v-if="userId === candy[4]">
+                    <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
+                    <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
+                </v-card-actions>
+            </v-card>
+            <v-card v-if="candy[3] === ''">
+                <img src="../assets/logoWhiteBackground.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped">
+                <h1>{{ candy[0] }}</h1>
+                <p>{{ candy[1] }}</p>
+                <h3>${{ candy[2] }}</h3>
+                <v-card-actions v-if="userId === candy[4]">
+                    <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
+                    <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
+                </v-card-actions>
+            </v-card>
+        </div>
     </article>
 </template>
 
@@ -55,14 +67,17 @@
         width: 90vw;
     }
 
+    .candyCardContainer {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
     .v-card {
         display: grid;
         place-items: center;
         row-gap: 20px;
-        width: 100%;
-        height: 100%;
-        padding: 0% 10% 5% 10%;
-        text-align: center;
+        padding: 5% 10%;
     }
 
     .v-card__actions {
@@ -72,27 +87,31 @@
         column-gap: 10px;
     }
 
-    .v-btn {
-        justify-self: end;
-    }
-
-    p {
-        font-size: 0.85rem;
-    }
+    /* h1, h3, p {
+        padding: 0;
+    } */
 
     h1, h3 {
         font-family: var(--titleFont);
-    }
-
-    h1 {
-        font-size: 1.8rem;
     }
 
     p, .v-btn {
         font-family: var(--bodyFont);
     }
 
+    h1 {
+        font-size: 1.8rem;
+    }
+
     h3 {
         font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    .v-btn {
+        justify-self: end;
     }
 </style>

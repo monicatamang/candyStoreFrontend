@@ -31,7 +31,7 @@ export default {
   },
 
   mounted() {
-    if(this.userId === null) {
+    if(!this.userId) {
       this.$router.push("/");
     }
   },
