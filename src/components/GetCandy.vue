@@ -38,9 +38,9 @@
             }
         },
 
-        mounted() {
-            this.$store.dispatch("getCandy");
-        }
+        // mounted() {
+        //     this.$store.dispatch("getCandy");
+        // }
     }
 </script>
 

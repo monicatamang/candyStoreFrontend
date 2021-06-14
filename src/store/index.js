@@ -15,8 +15,7 @@ export default new Vuex.Store({
     },
 
     removeCandy(state, data) {
-      let index = state.allCandies.indexOf(data);
-      state.allCandies.splice(index);
+      state.allCandies.splice(data, 1);
     },
 
     updateAllCandies(state, data) {

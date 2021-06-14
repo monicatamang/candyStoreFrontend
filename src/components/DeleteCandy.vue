@@ -11,7 +11,7 @@
 
         data() {
             return {
-                id: cookies.get("userData").id
+                id: cookies.get("userData").id,
             }
         },
 
@@ -34,10 +34,26 @@
                     }
                 }).then((res) => {
                     console.log(res);
-                    this.$store.commit("removeCandy", this.candyIdValue);
+                    // this.$store.commit("removeCandy", this.candyIdValue);
+                    for(let i = 0; i < this.candies[0].length; i++) {
+                        for(let j = 0; j < this.candies[0][i].length; j++) {
+                            if(this.candies[0][i][j] === this.candyIdValue) {
+                                let index = i;
+                                console.log(index);
+                                this.$store.commit("removeCandy", index);
+                            }
+                        }
+                    }
+                    this.$store.dispatch("getCandy");
                 }).catch((err) => {
                     console.log(err);
                 });
+            }
+        },
+
+        computed: {
+            candies() {
+                return this.$store.state.allCandies; 
             }
         },
     }

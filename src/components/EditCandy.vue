@@ -7,6 +7,7 @@
             <v-card-title class="text-center">Edit Your Candy</v-card-title>
             <form id="editCandyForm" action="javascript:void(0)">
                 <input type="text" id="editCandyName" placeholder="Name">
+                <!-- <textarea id="editCandyDescription" cols="25" rows="3" placeholder="Description" v-model="candyDescription"></textarea> -->
                 <textarea id="editCandyDescription" cols="25" rows="3" placeholder="Description"></textarea>
                 <input type="text" id="editCandyPrice" placeholder="Price($)">
                 <input type="URL" id="editCandyImage" placeholder="Image URL">
@@ -34,7 +35,8 @@
 
         data() {
             return {
-                dialog: false
+                dialog: false,
+                candyDescription: ""
             }
         },
 
@@ -51,6 +53,7 @@
                         candyId: this.candyIdValue,
                         name: document.getElementById("editCandyName").value,
                         description: document.getElementById("editCandyDescription").value,
+                        // description: this.candyDescription,
                         priceInDollars: parseFloat(document.getElementById("editCandyPrice").value),
                         imageUrl: document.getElementById("editCandyImage").value
                     }
