@@ -1,11 +1,11 @@
 <template>
     <v-dialog v-model="dialog" width="600">
         <template v-slot:activator="{ on, attrs }">
-            <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">Make Candy</v-btn>
+            <v-btn :color="buttonColor" v-bind="attrs" v-on="on">Make Candy</v-btn>
         </template>
         <v-card>
-            <v-card-title class="text-center">Candy Store</v-card-title>
-            <v-card-subtitle>Create Your Candy</v-card-subtitle>
+            <v-card-title>Candy Store</v-card-title>
+            <!-- <v-card-subtitle>Create Your Candy</v-card-subtitle> -->
             <form action="javascript:void(0)" id="candyForm">
                 <h3>Enter a new candy</h3>
                 <input type="text" id="candyName" placeholder="Name">
@@ -31,7 +31,8 @@
 
         data() {
             return {
-                dialog: false
+                dialog: false,
+                buttonColor: "#FAF1E6"
             }
         },
 

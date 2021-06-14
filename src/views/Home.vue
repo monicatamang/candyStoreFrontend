@@ -1,7 +1,13 @@
 <template>
     <section>
         <nav-bar></nav-bar>
-        <v-tabs centered center-active>
+        <v-divider></v-divider>
+        <main>
+            <img src="../assets/logo.jpg" alt="A clipart of two hard candies with a striped-patterned wrapped.">
+            <h1>Welcome to the Candy Store</h1>
+            <p>View and upload your favourite candies! Join today or login into your account.</p>
+        </main>
+        <v-tabs centered background-color="transparent" :color="textColor">
             <v-tab>Signup</v-tab>
             <v-tab>Login</v-tab>
             <v-tab-item>
@@ -11,6 +17,7 @@
                 <login-user></login-user>
             </v-tab-item>
         </v-tabs>
+        <copyright-statement></copyright-statement>
     </section>
 </template>
 
@@ -18,18 +25,51 @@
     import NavBar from "../components/NavBar.vue";
     import SignupUsers from "../components/SignupUsers.vue";
     import LoginUser from "../components/LoginUser.vue";
+    import CopyrightStatement from "../components/CopyrightStatement.vue";
 
     export default {
         name: "Home",
 
+        data() {
+            return {
+                textColor: "#FABA8B"
+            }
+        },
+
         components: {
             NavBar,
             SignupUsers,
-            LoginUser
+            LoginUser,
+            CopyrightStatement
         },
     }
 </script>
 
 <style scoped>
+    main {
+        display: grid;
+        place-items: center;
+        row-gap: 20px;
+        text-align: center;
+        padding: 0% 5%;
+        margin-bottom: 3vh;
+    }
 
+    img {
+        width: 60vw;
+        margin-bottom: -2vh;
+    }
+
+    h1 {
+        font-family: var(--titleFont);
+    }
+
+    p {
+        font-size: 0.9rem;
+        padding: 0% 6%;
+    }
+
+    p, .v-tabs {
+        font-family: var(--bodyFont);
+    }
 </style>

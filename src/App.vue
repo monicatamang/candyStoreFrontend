@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main color="#F9EAC2">
       <router-view/>
     </v-main>
   </v-app>
@@ -21,9 +21,12 @@ export default {
   :root {
     --titleFont: "Lora", serif;
     --bodyFont: "Poppins", sans-serif;
-    --mainDarkColor: "#F9EAC2";
-    --mainLightColor: "#F9EAC2";
-    --accentColorOne: "#ECFDF1";
-    --accentColorTwo: "#FEE7E6";
+    --mainDarkColor: #FAF1E6;
+    --mainLightColor: #FDFAF6;
+    --accentColor: #FABA8B;
+  }
+
+  .v-main__wrap {
+    background: #FDFAF6;
   }
 </style>

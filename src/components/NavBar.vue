@@ -1,6 +1,6 @@
 <template>
-    <v-app-bar flat>
-        <h1>Candy Store</h1>
+    <v-app-bar flat color="#faf1e6">
+        <h3>Candy Store</h3>
         <v-spacer></v-spacer>
         <v-btn text @click="logOutUser">Logout</v-btn>
     </v-app-bar>
@@ -28,7 +28,8 @@
 </script>
 
 <style scoped>
-    h1 {
-        font-family: var(--titleFont);
+    h3 {
+        font-family: var(--bodyFont);
+        font-weight: 500;
     }
 </style>

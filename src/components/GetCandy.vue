@@ -1,8 +1,9 @@
 <template>
     <article>
-        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard" :id="`candyPost${candy[5]}`">
+        <v-card v-for="candy in candies" :key="candy[5]" class="candyCard">
+            <v-btn fab elevation="1" class="mt-4">${{ candy[2] }}</v-btn>
             <img :src="candy[3]" :alt="candy[1]">
-            <h3>{{ candy[0] }} | ${{ parseFloat(candy[2]) }}</h3>
+            <h3>{{ candy[0] }}</h3>
             <p>{{ candy[1] }}</p>
             <v-card-actions v-if="userId === candy[4]">
                 <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
@@ -65,6 +66,10 @@
         width: 100%;
         height: 100%;
         padding: 0% 10%;
+    }
+
+    .v-btn {
+        justify-self: end;
     }
 
     p {

@@ -1,6 +1,7 @@
 <template>
   <section>
     <nav-bar></nav-bar>
+    <v-divider></v-divider>
     <section id="mainContent">
       <create-candy></create-candy>
       <get-candy></get-candy>
