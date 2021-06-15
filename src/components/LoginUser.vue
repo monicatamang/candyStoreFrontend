@@ -2,6 +2,7 @@
     <form action="javascript:void(0)">
         <input type="text" id="loginUsername" placeholder="Username">
         <input type="password" id="loginPassword" placeholder="Password">
+        <!-- When clicked, the function is called to log in users -->
         <v-btn @click="attemptLoginUser" elevation="1" large dark :color="buttonColor">Login</v-btn>
     </form>
 </template>

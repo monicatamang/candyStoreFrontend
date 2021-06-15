@@ -13,7 +13,9 @@
             </form>
             <v-card-actions>
                 <v-spacer></v-spacer>
+                <!-- When clicked, the form will show up on the page -->
                 <v-btn @click="dialog = false" text>Close</v-btn>
+                <!-- When clicked, the function is called to edit candy posts -->
                 <v-btn text @click="dialog = false; editCandy()">Post</v-btn>
             </v-card-actions>
         </v-card>

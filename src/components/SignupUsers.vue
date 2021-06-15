@@ -2,6 +2,7 @@
     <form action="javascript:void(0)">
         <input type="text" id="signupUsername" placeholder="Username">
         <input type="password" id="signupPassword" placeholder="Password">
+        <!-- When clicked, the function is called to sign up users -->
         <v-btn @click="signupUser" elevation="1" large dark :color="buttonColor">Signup</v-btn>
     </form>
 </template>
