@@ -7,6 +7,7 @@
 </template>
 
 <script>
+    // Importing axios and cookies
     import axios from "axios";
     import cookies from "vue-cookies";
 
@@ -15,12 +16,15 @@
 
         data() {
             return {
+                // Changing the colour of the button
                 buttonColor: "#FABA8B"
             }
         },
 
         methods: {
+            // Creating a POST request to log in users
             attemptLoginUser() {
+                // Configuring the request with the url, type, data type and the user's username and password
                 axios.request({
                     url: "http://127.0.0.1:5000/login",
                     method: "POST",
@@ -32,12 +36,16 @@
                         password: document.getElementById("loginPassword").value,
                     }
                 }).then((res) => {
+                    // If the network is done and there are no errors, convert the returned data into JSON format and store the user's credentials as a cookie
                     console.log(res);
                     let userDataJSON = JSON.stringify(res.data);
                     cookies.set("userData", userDataJSON);
+                    // Taking the user to the Store page
                     this.$router.push("/Store");
                 }).catch((err) => {
+                    // If the network is done and there are no errors, commit an error message to the user
                     console.log(err);
+                    this.$store.commit("updateRequestResponse", "Failed to log in.");
                 });
             }
         },

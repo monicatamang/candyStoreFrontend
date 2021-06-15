@@ -13,6 +13,7 @@
             </v-tab-item>
             <v-tab-item>
                 <login-user></login-user>
+                <h4>{{ APIResponse }}</h4>
             </v-tab-item>
         </v-tabs>
         <copyright-statement></copyright-statement>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+    // Importing components
     import SignupUsers from "../components/SignupUsers.vue";
     import LoginUser from "../components/LoginUser.vue";
     import CopyrightStatement from "../components/CopyrightStatement.vue";
@@ -27,16 +29,25 @@
     export default {
         name: "Home",
 
+        // Setting the text colour of the tabs to an orange colour
         data() {
             return {
                 textColor: "#FABA8B"
             }
         },
 
+        // Registering the components
         components: {
             SignupUsers,
             LoginUser,
             CopyrightStatement
+        },
+
+        computed: {
+            // Getting the user status from signing up or loggin into their account
+            APIResponse() {
+                return this.$store.state.userStatus; 
+            }
         },
     }
 </script>
@@ -65,7 +76,7 @@
         padding: 0% 6%;
     }
 
-    p, .v-tabs {
+    p, .v-tabs, h4 {
         font-family: var(--bodyFont);
     }
 </style>

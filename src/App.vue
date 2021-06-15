@@ -11,6 +11,7 @@
 export default {
   name: 'App',
 
+  // Getting all candy posts from the API request
   mounted () {
     this.$store.dispatch("getCandy");
   },

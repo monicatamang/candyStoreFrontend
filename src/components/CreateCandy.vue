@@ -23,6 +23,7 @@
 </template>
 
 <script>
+    // Import axios and cookies
     import axios from "axios";
     import cookies from "vue-cookies";
 
@@ -31,13 +32,17 @@
 
         data() {
             return {
+                // The dialog is intially closed until the button is clicked
                 dialog: false,
+                // Changing the colour of the button
                 buttonColor: "#FAF1E6"
             }
         },
 
         methods: {
+            // Creating a POST request to create a new candy post
             createCandy() {
+                // Configuring the request with the url, type, data type and the user's data
                 axios.request({
                     url: "http://127.0.0.1:5000/candy",
                     method: "POST",
@@ -52,14 +57,14 @@
                         userId: cookies.get("userData").id
                     }
                 }).then((res) => {
+                    // If the network is done and there are no errors, send the returned data to the store
                     console.log(res);
-                    document.getElementById("createCandyForm").reset();
                     this.$store.commit("addNewCandy", res.data)
                 }).catch((err) => {
+                    // If the network is done but the page errors, send an error message to the user
                     console.log(err);
+                    this.$store.commit("updateRequestStatus", "Failed to create new candy post.");
                 });
-
-                document.getElementById("createCandyForm").reset();
             },
         }
     }
