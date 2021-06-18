@@ -58,4 +58,10 @@ export default {
     text-align: center;
     font-family: var(--bodyFont);
   }
+
+  @media only screen and (min-width: 1024px) {
+    img {
+        width: 10vw;
+    }
+  }
 </style>

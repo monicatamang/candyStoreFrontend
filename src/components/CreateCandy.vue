@@ -44,7 +44,7 @@
             createCandy() {
                 // Configuring the request with the url, type, data type and the user's data
                 axios.request({
-                    url: "http://127.0.0.1:5000/candy",
+                    url: `${process.env.VUE_APP_API_URL}/candy`,
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

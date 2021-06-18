@@ -27,7 +27,7 @@
             attemptLoginUser() {
                 // Configuring the request with the url, type, data type and the user's username and password
                 axios.request({
-                    url: "http://127.0.0.1:5000/login",
+                    url: `${process.env.VUE_APP_API_URL}/login`,
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -81,5 +81,11 @@
 
     .v-btn {
         font-family: var(--bodyFont);
+    }
+
+    @media only screen and (min-width: 1024px) {
+        input {
+            height: 1vh;
+        }
     }
 </style>

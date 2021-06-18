@@ -79,4 +79,10 @@
     p, .v-tabs, h4 {
         font-family: var(--bodyFont);
     }
+
+    @media only screen and (min-width: 1024px) {
+        img {
+            width: 20vw;
+        }
+    }
 </style>

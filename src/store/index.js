@@ -53,7 +53,7 @@ export default new Vuex.Store({
     getCandy(context) {
       // Configuring the request with the url and type
       axios.request({
-          url: "http://127.0.0.1:5000/candy",
+          url: `${process.env.VUE_APP_API_URL}/candy`,
           method: "GET"
       }).then((res) => {
           console.log(res);

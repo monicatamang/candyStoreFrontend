@@ -29,7 +29,7 @@
             deleteCandy() {
                 // Configuring the request with the url, type, data type, candy id and user id
                 axios.request({
-                    url: "http://127.0.0.1:5000/candy",
+                    url: `${process.env.VUE_APP_API_URL}/candy`,
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json"
