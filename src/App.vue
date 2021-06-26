@@ -22,12 +22,12 @@ export default {
   :root {
     --titleFont: "Lora", serif;
     --bodyFont: "Poppins", sans-serif;
-    --mainDarkColor: #FAF1E6;
-    --mainLightColor: #FDFAF6;
-    --accentColor: #FABA8B;
+    --backgroundColor: #F9F3F3;
+    --primaryColor: #F7D9D9;
+    --accentColor: #F25287;
   }
 
   .v-main__wrap {
-    background: #FDFAF6;
+    background: white;
   }
 </style>

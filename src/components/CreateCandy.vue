@@ -35,7 +35,7 @@
                 // The dialog is intially closed until the button is clicked
                 dialog: false,
                 // Changing the colour of the button
-                buttonColor: "#FAF1E6"
+                buttonColor: "#F9F3F3"
             }
         },
 
@@ -50,11 +50,11 @@
                         "Content-Type": "application/json"
                     },
                     data: {
+                        loginToken: cookies.get("userData").loginToken,
                         name: document.getElementById("candyName").value,
                         description: document.getElementById("candyDescription").value,
                         priceInDollars: parseFloat(document.getElementById("candyPrice").value),
                         imageUrl: document.getElementById("candyImage").value,
-                        userId: cookies.get("userData").id
                     }
                 }).then((res) => {
                     // If the network is done and there are no errors, send the returned data to the store

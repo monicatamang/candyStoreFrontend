@@ -6,8 +6,8 @@
                 <h4>@{{ candy[6] }}</h4>
                 <img :src="candy[3]" :alt="candy[1]">
                 <h1>{{ candy[0] }}</h1>
-                <p>{{ candy[1] }}</p>
                 <h3>${{ candy[2] }}</h3>
+                <p>{{ candy[1] }}</p>
                 <v-card-actions v-if="userId === candy[4]">
                     <edit-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></edit-candy>
                     <delete-candy :candyIdValue="candy[5]" :userIdValue="candy[4]"></delete-candy>
@@ -15,7 +15,7 @@
             </v-card>
             <v-card v-if="candy[3] === ''">
                 <h4>@{{ candy[6] }}</h4>
-                <img src="../assets/logoWhiteBackground.jpg" alt="A clipart of two hard candies with first candy slightly angled towards the bottom left and the second candy slightly angled towards the bottom right. The first candy overlaps with the second candy and both candies each have a light orange-coloured outline and a striped-patterned wrapper with two light orange vertical stripes.">
+                <img src="../assets/peppermintCandy.jpg" alt="">
                 <h1>{{ candy[0] }}</h1>
                 <p>{{ candy[1] }}</p>
                 <h3>${{ candy[2] }}</h3>
@@ -60,14 +60,17 @@
 </script>
 
 <style scoped>
-    article, .v-card {
+    article, .v-card, .v-card__actions {
         display: grid;
         place-items: center;
+    }
+
+    article, .v-card {
         row-gap: 20px;
     }
 
     img {
-        width: 60%;
+        width: 50%;
     }
 
     article {
@@ -75,6 +78,7 @@
         column-gap: 20px;
         margin: 5vh 0vh;
         width: 90vw;
+        
     }
 
     .candyCardContainer, .v-card {
@@ -82,17 +86,12 @@
         height: 100%;
     }
 
-    .candyCardContainer {
+    .v-card {
+        padding: 5%;
         text-align: center;
     }
 
-    .v-card {
-        padding: 5% 10%;
-    }
-
     .v-card__actions {
-        display: grid;
-        place-items: center;
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
     }
@@ -115,6 +114,7 @@
 
     h4 {
         font-weight: 600;
+        color: var(--accentColor);
     }
 
     p {

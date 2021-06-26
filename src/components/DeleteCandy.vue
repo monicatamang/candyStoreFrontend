@@ -1,6 +1,6 @@
 <template>
     <!-- When clicked, the function is called and will delete a candy post -->
-    <v-btn @click="deleteCandy">Delete</v-btn>
+    <v-btn dark outlined color="#F25287" @click="deleteCandy">Delete</v-btn>
 </template>
 
 <script>
@@ -36,7 +36,7 @@
                     },
                     data: {
                         candyId: this.candyIdValue,
-                        userId: this.id
+                        loginToken: cookies.get("userData").loginToken,
                     }
                 }).then((res) => {
                     // Finding the index of candy post that the user wants to delete

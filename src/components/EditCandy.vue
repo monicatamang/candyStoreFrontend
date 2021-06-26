@@ -1,7 +1,7 @@
 <template>
     <v-dialog v-model="dialog" width="600">
         <template v-slot:activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on">Edit</v-btn>
+            <v-btn dark color="#F25287" v-bind="attrs" v-on="on">Edit</v-btn>
         </template>
         <v-card>
             <v-card-title class="text-center">Edit Your Candy</v-card-title>
@@ -14,7 +14,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <!-- When clicked, the form will show up on the page -->
-                <v-btn @click="dialog = false" text>Close</v-btn>
+                <v-btn text @click="dialog = false">Close</v-btn>
                 <!-- When clicked, the function is called to edit candy posts -->
                 <v-btn text @click="dialog = false; editCandy()">Post</v-btn>
             </v-card-actions>
@@ -59,7 +59,7 @@
                         "Content-Type": "application/json"
                     },
                     data: {
-                        userId: cookies.get("userData").id,
+                        loginToken: cookies.get("userData").loginToken,
                         candyId: this.candyIdValue,
                         name: document.getElementById(`editCandyName${this.candyIdValue}`).value,
                         description: document.getElementById(`editCandyDescription${this.candyIdValue}`).value,

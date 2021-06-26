@@ -18,7 +18,7 @@
         data() {
             return {
                 // Changing the colour of the button
-                buttonColor: "#FABA8B"
+                buttonColor: "#F25287"
             }
         },
 
@@ -58,7 +58,7 @@
         display: grid;
         place-items: center;
         row-gap: 30px;
-        background: #FDFAF6;
+        background: white;
         padding: 5vh 0vh 6vh 0vh;
     }
 
@@ -70,7 +70,7 @@
         background: white;
         padding: 3%;
         border-radius: 10px;
-        border: 3px solid var(--mainDarkColor);
+        border: 3px solid var(--backgroundColor);
         font-family: var(--bodyFont);
         font-size: 0.9rem;
     }
