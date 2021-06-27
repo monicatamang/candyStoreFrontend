@@ -15,7 +15,7 @@
             </v-card>
             <v-card v-if="candy[3] === ''">
                 <h4>@{{ candy[6] }}</h4>
-                <img src="../assets/peppermintCandy.jpg" alt="">
+                <img src="../assets/peppermintCandy.png" alt="A vector image of a dark pink peppermint candy that is wrapped with a dark pink wrapper. The peppermint has a swirled pattern combining both colours of white and dark pink">
                 <h1>{{ candy[0] }}</h1>
                 <p>{{ candy[1] }}</p>
                 <h3>${{ candy[2] }}</h3>
@@ -70,13 +70,13 @@
     }
 
     img {
-        width: 50%;
+        width: 40%;
     }
 
     article {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         column-gap: 20px;
-        margin: 5vh 0vh;
+        margin-bottom: 5vh;
         width: 90vw;
         
     }
@@ -96,32 +96,62 @@
         column-gap: 10px;
     }
 
-    h1, h3 {
-        font-family: var(--titleFont);
+    h1 {
+        font-weight: 600;
     }
 
-    p, .v-btn, h4 {
+    h3 {
+        font-weight: 500;
+    }
+
+    p, .v-btn, h4, h1, h3 {
         font-family: var(--bodyFont);
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     h4 {
         font-weight: 600;
-        color: var(--accentColor);
+        color: var(--primaryColor);
     }
 
     p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .v-btn {
         justify-self: end;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        article {
+            width: 95vw;
+        }
+
+        img {
+            width: 40%;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.75rem;
+        }
+
+        .v-card {
+            row-gap: 5px;
+        }
     }
 </style>

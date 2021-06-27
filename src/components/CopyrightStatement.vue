@@ -27,4 +27,22 @@
     .v-application p {
         margin-bottom: 0px;
     }
+
+    @media only screen and (min-width: 375px) and (orientation: landscape) {
+        div {
+            margin-bottom: 5vh;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        div {
+            display: none;
+        }
+    }
 </style>

@@ -42,6 +42,7 @@
         methods: {
             // Creating a POST request to create a new candy post
             createCandy() {
+                this.$store.commit("updateRequestStatus", "");
                 // Configuring the request with the url, type, data type and the user's data
                 axios.request({
                     url: `${process.env.VUE_APP_API_URL}/candy`,
@@ -58,12 +59,12 @@
                     }
                 }).then((res) => {
                     // If the network is done and there are no errors, send the returned data to the store
-                    console.log(res);
+                    res;
                     this.$store.commit("addNewCandy", res.data)
                 }).catch((err) => {
-                    // If the network is done but the page errors, send an error message to the user
-                    console.log(err);
-                    this.$store.commit("updateRequestStatus", "Failed to create new candy post.");
+                    // If the network is done but the page errors, print an error message to the user
+                    err;
+                    this.$store.commit("updateRequestStatus", "Failed to create candy post. Please try again.");
                 });
             },
         }
@@ -90,7 +91,7 @@
     input, textarea {
         background: white;
         padding: 3%;
-        border-bottom: 1.5px solid var(--accentColor);
+        border-bottom: 1.5px solid var(--primaryColor);
         font-family: var(--bodyFont);
         font-size: 0.9rem;
     }
@@ -103,5 +104,22 @@
         z-index: 1;
         bottom: 3vh;
         right: 5vw;
+    }
+
+    @media only screen and (min-width: 768px) {
+        #postCandyButton {
+            right: 4vw;
+        }
+
+        input, textarea {
+            width: 65%;
+            padding: 3% 1%;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        #postCandyButton {
+            right: 3vw;
+        }
     }
 </style>

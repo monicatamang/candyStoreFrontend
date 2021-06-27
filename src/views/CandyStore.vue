@@ -57,6 +57,7 @@ export default {
   h4 {
     text-align: center;
     font-family: var(--bodyFont);
+    margin: 3vh 0vw;
   }
 
   @media only screen and (min-width: 1024px) {

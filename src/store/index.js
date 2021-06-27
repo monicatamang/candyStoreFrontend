@@ -51,6 +51,7 @@ export default new Vuex.Store({
   actions: {
     // Creating a GET request to get all candy posts
     getCandy(context) {
+      context.commit("updateRequestStatus", "");
       // Configuring the request with the url and type
       axios.request({
           url: `${process.env.VUE_APP_API_URL}/candy`,
@@ -62,7 +63,7 @@ export default new Vuex.Store({
       }).catch((err) => {
           // If the network is done but the page errors, print an error message to the user
           err;
-          context.commit("updateRequestStatus", "Failed to retrieve all candy posts.")
+          context.commit("updateRequestStatus", "Failed to retrieve all candy posts. Please refresh the page.");
       });
     },
   },

@@ -1,7 +1,6 @@
 <template>
     <v-app-bar flat color="#F9F3F3">
-        <!-- <img src="../assets/peppermintCandy.jpg" alt="A clipart of two hard candies with first candy slightly angled towards the bottom left and the second candy slightly angled towards the bottom right. The first candy overlaps with the second candy and both candies each have a black-coloured outline and a striped-patterned wrapper with two black vertical stripes."> -->
-        <h3>candypost</h3>
+        <h3>candy post</h3>
         <v-spacer></v-spacer>
         <logout-user></logout-user>
     </v-app-bar>
@@ -14,7 +13,7 @@
         name: "nav-bar",
 
         components: {
-            LogoutUser,
+            LogoutUser
         },
 
         data() {
@@ -29,7 +28,8 @@
 <style scoped>
     h3 {
         font-family: var(--titleFont);
-        color: var(--accentColor);
+        color: var(--primaryColor);
+        font-weight: bold;
     }
 
     h3 {

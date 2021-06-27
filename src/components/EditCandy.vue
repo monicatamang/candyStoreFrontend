@@ -51,6 +51,7 @@
         methods: {
             // Creating a PATCH request to edit data about the user's candy posts
             editCandy() {
+                this.$store.commit("updateRequestStatus", "");
                 // Configuring the request with the url, type, data type and the user's data
                 axios.request({
                     url: `${process.env.VUE_APP_API_URL}/candy`,
@@ -68,7 +69,7 @@
                     }
                 }).then((res) => {
                     // If the network is done and there are no errors, store the returned data so it can be sent to the store
-                    console.log(res);
+                    res;
                     this.editedCandyPost.post = res.data;
 
                     // For each column in every row of the candies array, find the column that belongs to the candy id
@@ -85,9 +86,9 @@
                     // Replacing the old candy post with the edited candy post
                     this.$store.commit("updateCandy", this.editedCandyPost);
                 }).catch((err) => {
-                    // If the network is done but the page errors, console log the error, print an error message to the user
-                    console.log(err);
-                    this.$store.commit("updateRequestStatus", "Failed to edit candy post.");
+                    // If the network is done but the page errors, print an error message to the user
+                    err;
+                    this.$store.commit("updateRequestStatus", "Failed to edit candy post. Please try again.");
                 });
             }
         },
@@ -116,7 +117,7 @@
     input, textarea {
         background: white;
         padding: 3%;
-        border-bottom: 1.5px solid var(--accentColor);
+        border-bottom: 1.5px solid var(--primaryColor);
         font-family: var(--bodyFont);
         font-size: 0.9rem;
     }
@@ -127,5 +128,12 @@
 
     .v-btn {
         font-family: var(--bodyFont);
+    }
+
+    @media only screen and (min-width: 768px) {
+        input, textarea {
+            width: 65%;
+            padding: 3% 1%;
+        }
     }
 </style>

@@ -22,9 +22,8 @@ export default {
   :root {
     --titleFont: "Lora", serif;
     --bodyFont: "Poppins", sans-serif;
-    --backgroundColor: #F9F3F3;
-    --primaryColor: #F7D9D9;
-    --accentColor: #F25287;
+    --primaryColor: #F25287;
+    --secondaryColor: #F9F3F3;
   }
 
   .v-main__wrap {
