@@ -56,12 +56,12 @@ export default new Vuex.Store({
           url: `${process.env.VUE_APP_API_URL}/candy`,
           method: "GET"
       }).then((res) => {
-          console.log(res);
+          res;
           // If the network is done and there are no errors, send the data to the function to update the page with the current candy posts
           context.commit("storeAllCandies", res.data);
       }).catch((err) => {
           // If the network is done but the page errors, print an error message to the user
-          console.log(err);
+          err;
           context.commit("updateRequestStatus", "Failed to retrieve all candy posts.")
       });
     },
