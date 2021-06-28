@@ -15,7 +15,7 @@
                 <img src="../assets/peppermintCandy.png" alt="A vector image of a dark pink peppermint candy that is wrapped with a dark pink wrapper. The peppermint has a swirled pattern combining both colours of white and dark pink.">
             </div>
             <div>
-                <p>View and upload your favourite candies! Join today or log in into your account.</p>
+                <p>View and upload your favourite candies! Join today or log into your account.</p>
                 <h4>{{ APIResponse }}</h4>
                 <v-tabs centered background-color="transparent" :color="textColor">
                     <v-tab>Signup</v-tab>
